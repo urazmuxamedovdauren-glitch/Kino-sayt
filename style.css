@@ -1,0 +1,351 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
+html { scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+body { background: #1E2538; color: #fff; min-height: 100vh; }
+.container { width: 1200px; max-width: 100%; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- HEADER ---------- */
+
+header {padding: 20px 0; background-color: #1E2538; background-size: cover; background-position: top; }
+.header-row { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo-img { width: 30px; height: 30px; border: 1px dashed #8a8fa3; border-radius: 50%; font-size: 7px;
+  display: flex; align-items: center; justify-content: center; color: #8a8fa3; }
+.logo h1 { font-size: 20px; }
+.logo h1 span { color: #3657cb; }
+.social { display: flex; gap: 14px; margin-top: 8px; padding-left: 4px; }
+.social a { color: #8a8fa3; font-size: 12px; transition: .3s; }
+.social a:hover { color: #fff; }
+ 
+
+nav ul { display: flex; gap: 40px; }
+nav a { font-size: 13px; font-weight: 600; transition: .3s; }
+nav a:hover { color: #3657cb; }
+
+.actions { display: flex; gap: 16px; }
+.search { width: 48px; height: 44px; background: #fff; color: #3657cb; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; }
+.login { width: 88px; height: 44px; background: #3657cb; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(54,87,203,.6); transition: .3s; }
+.login:hover { background: #4a6be0; }
+
+/* ---------- TITLE + FILTER ---------- */
+.page { padding-top: 40px; padding-bottom: 80px; }
+.page > input { display: none; }
+.title-row { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
+.title-row h2 { font-size: 44px; font-weight: 800; }
+.line { width: 34px; height: 2px; background: #fff; }
+.filter { display: flex; gap: 28px; margin-left: auto; }
+.filter label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.35); cursor: pointer; transition: .3s; }
+.filter label:hover { color: #fff; }
+
+/* filtr (JS siz): tanlangan radio bo'yicha kartochkalarni yashiradi */
+.page:has(#f-action:checked)    .card:not(.action)    { display: none; }
+.page:has(#f-adventure:checked) .card:not(.adventure) { display: none; }
+.page:has(#f-comedy:checked)    .card:not(.comedy)    { display: none; }
+.page:has(#f-fantasy:checked)   .card:not(.fantasy)   { display: none; }
+.page:has(#f-thriller:checked)  .card:not(.thriller)  { display: none; }
+.page:has(#f-drama:checked)     .card:not(.drama)     { display: none; }
+.page:has(#f-all:checked)  label[for="f-all"],
+.page:has(#f-action:checked) label[for="f-action"],
+.page:has(#f-adventure:checked) label[for="f-adventure"],
+.page:has(#f-comedy:checked) label[for="f-comedy"],
+.page:has(#f-fantasy:checked) label[for="f-fantasy"],
+.page:has(#f-thriller:checked) label[for="f-thriller"],
+.page:has(#f-drama:checked) label[for="f-drama"] { color: #fff; }
+
+/* ---------- CARDS ---------- */
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 16px; }
+.card { display: block; }
+.poster { position: relative; height: 290px; border-radius: 8px; background: #2d3652; border: 1px dashed #55607f;
+  display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.poster::before { content: "Место для постера"; font-size: 12px; color: #8a8fa3; }
+.poster::after { content: ""; position: absolute; inset: 0; background: rgba(54,87,203,.45); opacity: 0; transition: .3s; }
+.card:hover .poster::after { opacity: 1; }
+.hover-btn { position: absolute; z-index: 2; background: #fff; color: #3657cb; font-size: 12px; font-weight: 700;
+  padding: 16px 26px; border-radius: 8px; opacity: 0; transition: .3s; }
+.card:hover .hover-btn { opacity: 1; }
+.rating { position: absolute; top: 0; right: 8px; z-index: 3; background: #6bc531; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 10px; border-radius: 0 0 6px 6px; }
+.rating.bad { background: #d13b3b; }
+.card h3 { font-size: 13px; font-weight: 700; margin-top: 14px; }
+.card p { font-size: 10px; color: #c8d52b; margin-top: 4px; }
+
+/* ---------- UP BUTTON ---------- */
+.up { position: fixed; right: 40px; bottom: 120px; width: 48px; height: 48px; background: #101114; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; z-index: 5; transition: .3s; }
+.up:hover { background: #3657cb; }
+
+/* ---------- MODAL (JS siz, :target orqali) ---------- */
+.modal { display: none; position: fixed; inset: 0; z-index: 10; align-items: center; justify-content: center; }
+.modal:target { display: flex; }
+.modal-bg { position: absolute; inset: 0; background: rgba(8,10,18,.85); }
+.modal-box { position: relative; display: flex; gap: 40px; width: 860px; max-width: 94%; padding: 40px;
+  background: #1E2538; border-radius: 14px; box-shadow: 0 0 60px rgba(54,87,203,.4); }
+.close { position: absolute; top: 12px; right: 20px; font-size: 34px; color: #8a8fa3; transition: .3s; }
+.close:hover { color: #fff; }
+.modal-poster { flex: 0 0 280px; height: 400px; border-radius: 10px; background: #2d3652; border: 1px dashed #55607f;
+  display: flex; align-items: center; justify-content: center; font-size: 12px; color: #8a8fa3; }
+.modal-info h2 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+.rating.big { position: static; display: inline-block; font-size: 16px; padding: 6px 14px; border-radius: 6px; margin-bottom: 20px; }
+.modal-info li { font-size: 14px; margin-bottom: 10px; color: #dfe3f0; }
+.modal-info li b { color: #c8d52b; }
+.modal-info p { font-size: 14px; line-height: 1.6; color: #b5bbd0; margin: 20px 0 26px; }
+.btn { display: inline-block; background: #3657cb; padding: 14px 28px; border-radius: 8px; font-size: 13px; font-weight: 700; transition: .3s; }
+.btn:hover { background: #4a6be0; }
+
+/* ---------- MOBIL ---------- */
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  nav { display: none; }
+  .title-row { flex-wrap: wrap; }
+  .filter { margin-left: 0; flex-wrap: wrap; }
+  .modal-box { flex-direction: column; overflow-y: auto; max-height: 92vh; }
+  .modal-poster { flex: none; width: 100%; height: 240px; }
+}
+.poster img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-poster {
+    overflow: hidden;
+}
+.modal-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
+html { scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+body { background: #1E2538; color: #fff; min-height: 100vh; }
+.container { width: 1200px; max-width: 100%; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Ikonlar ---------- */
+.social { display: flex; gap: 14px; }
+.social a { color: #8a8fa3; font-size: 12px; transition: .3s; }
+.social a:hover { color: #fff; }
+
+/* ---------- Новые трейлеры ---------- */
+.trailers { padding-top: 60px; padding-bottom: 100px; }
+.trailers-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 50px; }
+.trailers-head h2 { font-size: 44px; font-weight: 800; }
+.all-link { font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 12px; transition: .3s; }
+.all-link:hover { color: #3657cb; }
+
+.video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.video-info { display: flex; align-items: flex-start; justify-content: space-between; margin-top: 24px; }
+.video-left { display: flex; align-items: center; gap: 20px; }
+.video-left h3 { font-size: 30px; font-weight: 800; }
+
+.votes { display: flex; gap: 8px; }
+.vote { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.vote span { font-size: 10px; color: #8a8fa3; }
+.vote-btn { width: 40px; height: 40px; background: #101114; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; font-size: 14px; transition: .3s; }
+.vote-btn:hover { background: #3657cb; }
+
+/* ---------- Tepaga chiqish tugmasi ---------- */
+.up { position: fixed; right: 40px; bottom: 120px; width: 48px; height: 48px; background: #101114; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; z-index: 5; transition: .3s; }
+.up:hover { background: #3657cb; }
+
+/* ---------- MOBIL ---------- */
+@media (max-width: 1000px) {
+  .trailers-head h2 { font-size: 30px; }
+  .video-left h3 { font-size: 22px; }
+  .video-left { flex-wrap: wrap; gap: 8px; }
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
+html { scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+body { background: #1E2538; color: #fff; min-height: 100vh; }
+.container { width: 1200px; max-width: 100%; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Ikonlar ---------- */
+.social { display: flex; gap: 14px; }
+.social a { color: #8a8fa3; font-size: 12px; transition: .3s; }
+.social a:hover { color: #fff; }
+
+/* ---------- Новые трейлеры ---------- */
+.trailers { padding-top: 60px; padding-bottom: 100px; }
+.trailers-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 50px; }
+.trailers-head h2 { font-size: 44px; font-weight: 800; }
+.all-link { font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 12px; transition: .3s; }
+.all-link:hover { color: #3657cb; }
+
+.video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.video-info { display: flex; align-items: flex-start; justify-content: space-between; margin-top: 24px; }
+.video-left { display: flex; align-items: center; gap: 20px; }
+.video-left h3 { font-size: 30px; font-weight: 800; }
+
+.votes { display: flex; gap: 8px; }
+.vote { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.vote span { font-size: 10px; color: #8a8fa3; }
+.vote-btn { width: 40px; height: 40px; background: #101114; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; font-size: 14px; transition: .3s; }
+.vote input { display: none; }
+.vote-btn { cursor: pointer; }
+.vote-btn:hover { background: #1d2130; }
+
+.vote input:checked + .vote-btn {
+    background: #3657cb;
+    box-shadow: 0 0 14px rgba(54, 87, 203, .6);
+}
+
+/* ---------- Umumiy ---------- */
+.block { margin-top: 100px; }
+.ph { position: relative; overflow: hidden; background: #2d3652; border: 1px dashed #55607f; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; }
+.ph::before { content: "Место для фото"; font-size: 11px; color: #8a8fa3; }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; } /* rasm qo'ysangiz */
+small { font-size: 10px; }
+.sec-head { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
+.sec-head h2 { font-size: 44px; font-weight: 800; }
+.sec-head .right { margin-left: auto; }
+.line { width: 34px; height: 2px; background: #fff; }
+.dates { font-size: 12px; color: #8a8fa3; }
+.filter { display: flex; gap: 24px; }
+.filter a, .filter label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.35); cursor: pointer; transition: .3s; }
+.filter a:hover, .filter label:hover, .filter .on { color: #fff; }
+.arrows, .pager { display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 13px; }
+.pager { margin-top: 40px; }
+
+/* ---------- Trailer miniaturalari ---------- */
+.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 60px; }
+.thumb .ph { height: 154px; }
+.thumb .ph i { position: absolute; z-index: 2; font-size: 16px; }
+.thumb h4 { font-size: 12px; margin-top: 14px; }
+.thumb:hover .ph { border-color: #3657cb; }
+
+/* ---------- Kartalar ---------- */
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 16px; }
+.poster { height: 290px; }
+.rating { position: absolute; top: 0; right: 8px; z-index: 3; background: #6bc531; color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 10px; border-radius: 0 0 6px 6px; }
+.card h3 { font-size: 13px; font-weight: 700; margin-top: 14px; }
+.card p { font-size: 10px; color: #c8d52b; margin-top: 4px; }
+.card:hover .ph { border-color: #3657cb; }
+
+/* ---------- Yil filtri (JS siz) ---------- */
+.pop > input { display: none; }
+.pop:has(#y-all:checked) label[for="y-all"] { color: #fff; }
+.pop:has(#y-2020:checked) .card:not(.y2020) { display: none; }
+.pop:has(#y-2020:checked) label[for="y-2020"] { color: #fff; }
+.pop:has(#y-2019:checked) .card:not(.y2019) { display: none; }
+.pop:has(#y-2019:checked) label[for="y-2019"] { color: #fff; }
+.pop:has(#y-2018:checked) .card:not(.y2018) { display: none; }
+.pop:has(#y-2018:checked) label[for="y-2018"] { color: #fff; }
+.pop:has(#y-2017:checked) .card:not(.y2017) { display: none; }
+.pop:has(#y-2017:checked) label[for="y-2017"] { color: #fff; }
+.pop:has(#y-2016:checked) .card:not(.y2016) { display: none; }
+.pop:has(#y-2016:checked) label[for="y-2016"] { color: #fff; }
+.pop:has(#y-2015:checked) .card:not(.y2015) { display: none; }
+.pop:has(#y-2015:checked) label[for="y-2015"] { color: #fff; }
+
+/* ---------- Персоны ---------- */
+.persons { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 12px; }
+.person { position: relative; height: 250px; border-radius: 8px; overflow: hidden; }
+.person .ph { position: absolute; inset: 0; }
+.person::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 45%, rgba(0,0,0,.85)); }
+.place { position: absolute; top: 12px; left: 14px; z-index: 2; color: #c8d52b; }
+.pinfo { position: absolute; z-index: 2; left: 18px; bottom: 16px; display: flex; flex-direction: column; gap: 4px; }
+.pinfo h4 { font-size: 17px; }
+.pinfo span { font-size: 11px; color: #8a8fa3; }
+.pinfo small { color: #c8d52b; }
+.plist { background: #1a2033; border-radius: 8px; padding: 10px 24px; }
+.plist li { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #262e47; }
+.plist li:last-child { border: 0; }
+.plist div { display: flex; flex-direction: column; gap: 3px; }
+.plist b { font-size: 12px; }
+.plist span { font-size: 10px; color: #3a4a8a; }
+.plist small { color: #c8d52b; }
+.plist em { font-style: normal; font-size: 10px; color: #c8d52b; }
+
+/* ---------- Новости ---------- */
+.news { display: grid; grid-template-columns: 1fr 190px; gap: 8px; }
+.nb { position: relative; height: 400px; border-radius: 8px; overflow: hidden; display: block; }
+.nb .ph, .ns .ph { position: absolute; inset: 0; border-radius: 0; }
+.nb::after, .ns::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, rgba(0,0,0,.85)); }
+.ntext { position: absolute; z-index: 2; left: 18px; right: 18px; bottom: 18px; }
+.ntext small { display: block; margin-bottom: 14px; }
+.ntext h3 { font-size: 22px; margin-bottom: 10px; }
+.ntext p { font-size: 11px; line-height: 1.6; color: #dfe3f0; }
+.nside { display: flex; flex-direction: column; gap: 8px; }
+.ns { position: relative; flex: 1; border-radius: 8px; overflow: hidden; }
+.ns small { position: absolute; z-index: 2; top: 10px; left: 10px; }
+.ns b { position: absolute; z-index: 2; left: 10px; right: 10px; bottom: 10px; font-size: 10px; }
+.read { position: absolute; inset: 0; z-index: 4; display: none; align-items: center; justify-content: center;
+  background: rgba(54,87,203,.65); font-size: 11px; font-weight: 700; }
+.ns:hover .read { display: flex; }
+
+/* ---------- Кассовые сборы ---------- */
+.box { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.bitem { display: flex; gap: 10px; align-items: center; }
+.bitem .ph { flex: 0 0 40px; height: 62px; border-radius: 4px; }
+.bitem .ph::before { content: ""; }
+.bitem div:last-child { display: flex; flex-direction: column; gap: 4px; }
+.bitem b { font-size: 11px; }
+.sum { font-size: 10px; color: #c8d52b; font-weight: 700; }
+.bitem small { font-size: 9px; color: #8a8fa3; }
+
+/* ---------- Рассылка ---------- */
+.subscribe { background: #2038b4; border-radius: 8px; padding: 60px 20px; text-align: center; }
+.slogo { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; margin-bottom: 30px; }
+.logo-dot { width: 16px; height: 16px; border: 1px dashed #fff; border-radius: 50%; }
+.subscribe h2 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+.subscribe p { max-width: 520px; margin: 0 auto 30px; font-size: 14px; line-height: 1.5; }
+.sform { display: flex; justify-content: center; gap: 8px; }
+.sform input { width: 390px; max-width: 60%; height: 48px; border: 0; border-radius: 8px; padding: 0 18px; font-size: 12px; outline: none; }
+.sform button { height: 48px; padding: 0 24px; border: 0; border-radius: 8px; background: #f3ff1a; color: #111; font-size: 12px; font-weight: 700; cursor: pointer; transition: .3s; }
+.sform button:hover { background: #fff; }
+.agree { display: inline-block; margin-top: 18px; font-size: 10px; }
+.agree a { text-decoration: underline; color: #9fb4ff; }
+
+/* ---------- Footer ---------- */
+footer { text-align: center; padding: 60px 20px 40px; }
+footer .social { justify-content: center; gap: 28px; }
+.fnav { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 40px; margin: 34px 0 30px; }
+.fnav a { font-size: 11px; font-weight: 700; transition: .3s; }
+.fnav a:hover { color: #3657cb; }
+footer p { font-size: 10px; color: #8a8fa3; }
+
+/* ---------- Tepaga chiqish tugmasi ---------- */
+.up { position: fixed; right: 40px; bottom: 120px; width: 48px; height: 48px; background: #101114; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; z-index: 5; transition: .3s; }
+.up:hover { background: #3657cb; }
+
+/* ---------- MOBIL ---------- */
+@media (max-width: 1000px) {
+  .trailers-head h2 { font-size: 30px; }
+  .video-left h3 { font-size: 22px; }
+  .video-left { flex-wrap: wrap; gap: 8px; }
+  .grid, .thumbs { grid-template-columns: repeat(2, 1fr); }
+  .persons, .news { grid-template-columns: 1fr; }
+  .box { grid-template-columns: repeat(2, 1fr); }
+  .sec-head { flex-wrap: wrap; gap: 14px; }
+  .sec-head h2 { font-size: 30px; }
+  .sec-head .right { margin-left: 0; }
+  .filter { flex-wrap: wrap; }
+  .sform { flex-direction: column; align-items: center; }
+  .sform input { max-width: 100%; }
+}
+
+.thumb { min-width: 0; }
+.thumb .ph::before { content: ""; }

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinoarea</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="top">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-row">
+      <div class="brand">
+        <a href="#top" class="logo">
+          <img src="./logo.png" alt="">
+          <h1>Kino<span>area</span></h1>
+        </a>
+        <ul class="social">
+          <li><a href="#"><i class="fa-brands fa-vk"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Afisha</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Filmlar</a></li>
+          <li><a href="#">Aktyorlar</a></li>
+          <li><a href="#">Yangiliklar</a></li>
+          <li><a href="#">Kategoriyalar</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="#" class="login">Kirish</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container page" id="films">
+    <input type="radio" name="f" id="f-all" checked><input type="radio" name="f" id="f-action"><input type="radio" name="f" id="f-adventure"><input type="radio" name="f" id="f-comedy"><input type="radio" name="f" id="f-fantasy"><input type="radio" name="f" id="f-thriller"><input type="radio" name="f" id="f-drama">
+    <div class="title-row">
+      <h2>Hozir kinoda</h2>
+      <span class="line"></span>
+      <div class="filter"><label for="f-all">Hammasi</label><label for="f-action">Jangari</label><label for="f-adventure">Sarguzashtlar</label><label for="f-comedy">Komediya</label><label for="f-fantasy">Fantastika</label><label for="f-thriller">Qo'rqinchli</label><label for="f-drama">Drama</label></div>
+    </div>
+
+    <div class="grid">
+        <a href="#pretoria" class="card thriller">
+          
+          <div class="poster"> <img src="./1-film.png" alt=""><span class="rating">6.70</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Pretoriyadan Qochish</h3><p>Триллер</p>
+        </a>
+        <a href="#joker" class="card thriller drama">
+          <div class="poster"> <img src="./2-folm.png" alt=""><span class="rating">8.50</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Karolin</h3><p>Триллер, драма, криминал</p>
+        </a>
+        <a href="#starwars" class="card fantasy action adventure">
+          <div class="poster"> <img src="./3-film.png" alt=""> <span class="rating">6.70</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Avatar:Olov va Kul</h3><p>Фантастика, фэнтези, боевик, приключения</p>
+        </a>
+        <a href="#gentlemen" class="card action comedy">
+          <div class="poster"> <img src="./4-film.png" alt=""><span class="rating">8.00</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Boshqotirma</h3><p>Боевик, комедия, криминал</p>
+        </a>
+        <a href="#ford" class="card drama action">
+          <div class="poster"> <img src="./5-film.png" alt=""><span class="rating">8.10</span><span class="hover-btn">Film Bo'agi</span></div>
+          <h3>Biz Qahramon Bo'lamiz</h3><p>Драма, боевик</p>
+        </a>
+        <a href="#3022" class="card thriller">
+          <div class="poster"> <img src="./6-film.png" alt=""><span class="rating bad">4.90</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Katta Qahramonlar</h3><p>Фантастика, триллер</p>
+        </a>
+        <a href="#birds" class="card action comedy">
+          <div class="poster"> <img src="./7-film.png" alt=""><span class="rating">6.20</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Yagona Xazina</h3><p>Боевик, комедия, криминал</p>
+        </a>
+        <a href="#badboys" class="card action comedy">
+          <div class="poster"> <img src="./8-film.png" alt=""><span class="rating">6.90</span><span class="hover-btn">Film Bo'lagi</span></div>
+          <h3>Muzyurak</h3><p>Боевик, комедия, криминал</p>
+        </a>
+    </div>
+  </main>
+
+  <!-- Tepaga chiqish tugmasi -->
+  <a href="#top" class="up"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <!-- Film to'liq kartochkalari (oyna) -->
+  <div class="modal" id="pretoria">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./1-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Побег из Претории</h2>
+        <span class="rating big">6.70</span>
+        <ul>
+          <li><b>Год:</b> 2020</li>
+          <li><b>Жанр:</b> Триллер</li>
+          <li><b>Длительность:</b> 106 мин</li>
+          <li><b>Страна:</b> Великобритания, Австралия</li>
+          <li><b>Режиссёр:</b> Фрэнсис Аннан</li>
+        </ul>
+        <p>Два молодых активиста попадают в тюрьму Претории и придумывают дерзкий план побега, вырезая деревянные ключи.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="joker">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./2-folm.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Karolin</h2>
+        <span class="rating big">8.50</span>
+        <ul>
+          <li><b>Год:</b> 2019</li>
+          <li><b>Жанр:</b> Триллер, драма, криминал</li>
+          <li><b>Длительность:</b> 122 мин</li>
+          <li><b>Страна:</b> США, Канада</li>
+          <li><b>Режиссёр:</b> Тодд Филлипс</li>
+        </ul>
+        <p>Готэм, начало 1980-х. Комик Артур Флек живёт на обочине общества и постепенно превращается в безумного преступника.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="starwars">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./3-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Звёздные войны: Скайуокер. Восход</h2>
+        <span class="rating big">6.70</span>
+        <ul>
+          <li><b>Год:</b> 2019</li>
+          <li><b>Жанр:</b> Фантастика, фэнтези, боевик, приключения</li>
+          <li><b>Длительность:</b> 142 мин</li>
+          <li><b>Страна:</b> США</li>
+          <li><b>Режиссёр:</b> Джей Джей Абрамс</li>
+        </ul>
+        <p>Финальная битва Сопротивления и Первого ордена. Рей, Финн и По делают последний шаг в многолетней саге.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="gentlemen">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./4-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Джентльмены</h2>
+        <span class="rating big">8.00</span>
+        <ul>
+          <li><b>Год:</b> 2019</li>
+          <li><b>Жанр:</b> Боевик, комедия, криминал</li>
+          <li><b>Длительность:</b> 113 мин</li>
+          <li><b>Страна:</b> США, Великобритания</li>
+          <li><b>Режиссёр:</b> Гай Ричи</li>
+        </ul>
+        <p>Американский эмигрант хочет продать свою марихуановую империю, и вокруг сделки начинается настоящая игра.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="ford">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./5-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Ford против Ferrari</h2>
+        <span class="rating big">8.10</span>
+        <ul>
+          <li><b>Год:</b> 2019</li>
+          <li><b>Жанр:</b> Драма, боевик</li>
+          <li><b>Длительность:</b> 152 мин</li>
+          <li><b>Страна:</b> США</li>
+          <li><b>Режиссёр:</b> Джеймс Мэнголд</li>
+        </ul>
+        <p>Автоконструктор Кэрролл Шелби и гонщик Кен Майлз создают гоночную машину, способную победить Ferrari в Ле-Мане.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="3022">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./6-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>3022</h2>
+        <span class="rating big bad">4.90</span>
+        <ul>
+          <li><b>Год:</b> 2019</li>
+          <li><b>Жанр:</b> Фантастика, триллер</li>
+          <li><b>Длительность:</b> 88 мин</li>
+          <li><b>Страна:</b> США</li>
+          <li><b>Режиссёр:</b> Джон Суитс</li>
+        </ul>
+        <p>Экипаж космической станции теряет связь с Землёй и должен выжить, не зная, что случилось с планетой.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="birds">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./7-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Хищные птицы: Потрясающая история Харли Квинн</h2>
+        <span class="rating big">6.20</span>
+        <ul>
+          <li><b>Год:</b> 2020</li>
+          <li><b>Жанр:</b> Боевик, комедия, криминал</li>
+          <li><b>Длительность:</b> 109 мин</li>
+          <li><b>Страна:</b> США</li>
+          <li><b>Режиссёр:</b> Кэти Ян</li>
+        </ul>
+        <p>Харли Квинн расстаётся с Джокером и объединяется с новыми подругами, чтобы защитить девочку от злодея.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="badboys">
+    <a href="#films" class="modal-bg"></a>
+    <div class="modal-box">
+      <a href="#films" class="close">&times;</a>
+      <div class="modal-poster"><img src="./8-film.png" alt=""></div>
+      <div class="modal-info">
+        <h2>Плохие парни навсегда</h2>
+        <span class="rating big">6.90</span>
+        <ul>
+          <li><b>Год:</b> 2020</li>
+          <li><b>Жанр:</b> Боевик, комедия, криминал</li>
+          <li><b>Длительность:</b> 124 мин</li>
+          <li><b>Страна:</b> США</li>
+          <li><b>Режиссёр:</b> Адиль Эль Арби, Билалл Фалла</li>
+        </ul>
+        <p>Майк и Маркус возвращаются, чтобы остановить таинственного преступника, охотящегося на полицейских Майами.</p>
+        <a href="#films" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="container trailers">
+    <div class="trailers-head">
+      <h2>Новые трейлеры</h2>
+      <a href="#" class="all-link">Все трейлеры <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+ 
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/fEE4RO-_jug"
+              title="Форсаж 9 трейлер"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+ 
+    <div class="video-info">
+      <div class="video-left">
+        <h3>Форсаж 9</h3>
+        <ul class="social">
+          <li><a href="#"><i class="fa-brands fa-vk"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-ellipsis"></i></a></li>
+        </ul>
+      </div>
+      <div class="votes">
+        <div class="vote"><input type="checkbox" id="like"> <label for="like" class="vote-btn"> <i class="fa-solid fa-thumbs-up"></i></label> <span>3245</span></div>
+        <div class="vote"><input type="checkbox" id="dislike"> <label for="dislike" class="vote-btn"> <i class="fa-solid fa-thumbs-down"></i></label><span>420</span></div>
+      </div>
+    </div>
+  </section>
+
+ <div class="container">
+  <div class="thumbs">
+    <a href="#" class="thumb">
+      <div class="ph">
+        <img src="./9-film.png" alt="Мулан">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Garri Potter</h4>
+    </a>
+    <a href="#" class="thumb">
+      <div class="ph">
+        <img src="./10-film.png" alt="Форсаж 9">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>ONO</h4>
+    </a>
+    <a href="#" class="thumb">
+      <div class="ph">
+        <img src="./11-film.png" alt="Чёрная Вдова">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Sonic</h4>
+    </a>
+    <a href="#" class="thumb">
+      <div class="ph">
+        <img src="./12-film.png" alt="Тихое место 2">
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <h4>Hayvonlar Shahri</h4>
+    </a>
+  </div>
+</div>
+  </section>
+ 
+  <!-- POPULAR FILMS -->
+  <section class="container block pop">
+    <input type="radio" name="y" id="y-all"><input type="radio" name="y" id="y-2020"><input type="radio" name="y" id="y-2019" checked><input type="radio" name="y" id="y-2018"><input type="radio" name="y" id="y-2017"><input type="radio" name="y" id="y-2016"><input type="radio" name="y" id="y-2015">
+    <div class="sec-head"><h2>Mashur Filmlar</h2><span class="line"></span><div class="filter right"><label for="y-all">Hammasi</label><label for="y-2020">2020</label><label for="y-2019">2019</label><label for="y-2018">2018</label><label for="y-2017">2017</label><label for="y-2016">2016</label><label for="y-2015">2015</label></div></div>
+    <div class="grid">
+      <a href="#" class="card y2019">
+        <div class="poster ph"> <img src="./13-film.png" alt=""><span class="rating">8.50</span></div>
+        <h3>Labirint</h3><p></p>
+      </a>
+      <a href="#" class="card y2019">
+        <div class="poster ph"> <img src="./14-film.png" alt=""><span class="rating">7.80</span></div>
+        <h3>Ajal O'yini</h3><p></p>
+      </a>
+      <a href="#" class="card y2019">
+        <div class="poster ph"> <img src="./15-film.png" alt=""><span class="rating">7.70</span></div>
+        <h3>Jonajon Uy</h3><p></p>
+      </a>
+      <a href="#" class="card y2019">
+        <div class="poster ph"> <img src="./16-film.png" alt=""><span class="rating">7.10</span></div>
+        <h3>Ojiz Qahramon</h3><p></p>
+      </a>
+      <a href="#" class="card y2020">
+        <div class="poster ph"> <img src="./17-film.png" alt=""><span class="rating">6.90</span></div>
+        <h3>Haqiqiy Ta'lim</h3><p></p>
+      </a>
+      <a href="#" class="card y2020">
+        <div class="poster ph"> <img src="./18-film.png" alt=""><span class="rating">6.20</span></div>
+        <h3>Mo'jizakor Telbalar</h3><p></p>
+      </a>
+      <a href="#" class="card y2020">
+        <div class="poster ph"> <img src="./19-film.png" alt=""><span class="rating">8.00</span></div>
+        <h3>Agar Tilaklar O'ldira Olsa</h3><p></p>
+      </a>
+      <a href="#" class="card y2020">
+        <div class="poster ph"> <img src="./20-film.png" alt=""><span class="rating">6.70</span></div>
+        <h3>Ta'lim Guruhi</h3><p></p>
+      </a>
+    </div>
+    <div class="pager"><i class="fa-solid fa-arrow-left-long"></i><span>4/15</span><i class="fa-solid fa-arrow-right-long"></i></div>
+  </section>
+ 
+  <!-- PERSONS -->
+  <section class="container block">
+    <div class="sec-head"><h2>Популярные персоны</h2><div class="filter right"><a href="#">За год</a><a href="#">За месяц</a><a href="#" class="on">За неделю</a></div></div>
+    <div class="persons">
+      <a href="#" class="person"><div class="ph"></div><small class="place">1-е место</small><div class="pinfo"> alt=""><h4>Квентин Тарантино</h4><span>Quentin Tarantino</span><small>57 лет</small></div></a>
+      <a href="#" class="person"><div class="ph"></div><small class="place">2-е место</small><div class="pinfo"><h4>Джейсон Стэйтем</h4><span>Jason Statham</span><small>52 года</small></div></a>
+      <ul class="plist"><li><div><b>Тинто Брасс</b><span>Tinto Brass</span><small>87 лет</small></div><em>3-е место</em></li><li><div><b>Джеки Чан</b><span>Jackie Chan</span><small>66 лет</small></div><em>4-е место</em></li><li><div><b>Том Харди</b><span>Tom Hardy</span><small>42 года</small></div><em>5-е место</em></li><li><div><b>Акшай Кумар</b><span>Akshay Kumar</span><small>52 года</small></div><em>6-е место</em></li></ul>
+    </div>
+  </section>
+ 
+  <!-- NEWS -->
+  <section class="container block">
+    <div class="sec-head"><h2>Последние новости</h2><a href="#" class="all-link right">Все новости <i class="fa-solid fa-arrow-right-long"></i></a></div>
+    <div class="news">
+      <a href="#" class="nb"><div class="ph"></div>
+        <div class="ntext"><small>15 Апр 2020 &nbsp;<i class="fa-regular fa-eye"></i> 242 &nbsp;<i class="fa-regular fa-comment"></i> 14</small>
+        <h3>Не время умирать. Перенос релиза фильма</h3>
+        <p>Но действия представителей оппозиции в равной степени предоставлены сами себе. В рамках спецификации современных стандартов, стремящиеся вытеснить традиционное производство, нанотехнологии указаны как претенденты на роль ключевых факторов.</p></div></a>
+      <div class="nside"><a href="#" class="ns"><div class="ph"></div><small>15 Апр 2020</small><b>Как изменили Соника с последнего анонса</b><span class="read">Читать новость</span></a><a href="#" class="ns"><div class="ph"></div><small>15 Апр 2020</small><b>Новость для середины списка</b><span class="read">Читать новость</span></a><a href="#" class="ns"><div class="ph"></div><small>15 Апр 2020</small><b>От этой новости вы будете шокированы до завтра</b><span class="read">Читать новость</span></a><a href="#" class="ns"><div class="ph"></div><small>13 Апр 2020</small><b>Вот это, конечно, да!</b><span class="read">Читать новость</span></a></div>
+    </div>
+  </section>
+ 
+  <!-- UPCOMING -->
+  <section class="container block">
+    <div class="sec-head"><h2>Ожидаемые новинки</h2><div class="arrows right"><i class="fa-solid fa-arrow-left-long"></i><span>2/5</span><i class="fa-solid fa-arrow-right-long"></i></div></div>
+    <div class="grid"><a href="#" class="card"><div class="poster ph"></div><h3>Побег из Претории</h3><p>14 мая 2020 в России</p></a><a href="#" class="card"><div class="poster ph"></div><h3>Прощай</h3><p>14 мая 2020 в России</p></a><a href="#" class="card"><div class="poster ph"></div><h3>Дружить по-русски!</h3><p>21 мая 2020 в России</p></a><a href="#" class="card"><div class="poster ph"></div><h3>Приди ко мне</h3><p>21 мая 2020 в России</p></a></div>
+  </section>
+ 
+  <!-- BOX OFFICE -->
+  <section class="container block">
+    <div class="sec-head"><h2>Кассовые сборы</h2><span class="dates">13 марта — 15 марта</span><span class="line"></span><div class="filter right"><a href="#">Россия</a><a href="#" class="on">Весь мир</a><a href="#">США и Канада</a></div></div>
+    <div class="box"><a href="#" class="bitem"><div class="ph"></div><div><b>1. Бладшот</b><span class="sum">$13 млн</span><small>$15.7 млн за 4 недели</small></div></a><a href="#" class="bitem"><div class="ph"></div><div><b>2. Вперёд</b><span class="sum">$6.8 млн</span><small>$43.4 млн за 4 недели</small></div></a><a href="#" class="bitem"><div class="ph"></div><div><b>3. Человек-невидимка</b><span class="sum">$6.2 млн</span><small>$58.2 млн за 3 недели</small></div></a><a href="#" class="bitem"><div class="ph"></div><div><b>4. Соник в кино</b><span class="sum">$2.9 млн</span><small>$15.1 млн за 4 недели</small></div></a><a href="#" class="bitem"><div class="ph"></div><div><b>5. Джентльмены</b><span class="sum">$1.8 млн</span><small>$76.7 млн за 11 недель</small></div></a></div>
+  </section>
+ 
+  <!-- SUBSCRIBE -->
+  <section class="container block">
+    <div class="subscribe"><!-- fon rasmi: style.css dagi .subscribe ga background-image qo'shing -->
+      <div class="slogo"><span class="logo-dot"></span> Kinoarea</div>
+      <h2>Подпишитесь на E-mail рассылку</h2>
+      <p>Если хотите быть в курсе последних новостей и новинок кино - заполните форму ниже и оформите бесплатную E-mail рассылку!</p>
+      <form class="sform" action="#" method="post">
+        <input type="email" placeholder="Введите свой E-mail адрес" required>
+        <button type="submit">Подписаться</button>
+      </form>
+      <label class="agree"><input type="checkbox" checked> Соглашаюсь на условия <a href="#">политики конфиденциальности</a></label>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <ul class="social">
+      <li><a href="#"><i class="fa-brands fa-vk"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
+    <ul class="fnav">
+      <li><a href="#">Афиша</a></li><li><a href="#">Новости</a></li><li><a href="#">Персоны</a></li>
+      <li><a href="#">Рейтинги</a></li><li><a href="#">Рецензии</a></li><li><a href="#">Каталог фильмов</a></li>
+    </ul>
+    <p>© Kinoarea, 2026</p>
+  </footer>
+ 
+  <!-- Tepaga chiqish tugmasi -->
+  <a href="#top" class="up"><i class="fa-solid fa-arrow-up"></i></a>
+ 
+  <!-- Tepaga chiqish tugmasi -->
+  <a href="#top" class="up"><i class="fa-solid fa-arrow-up"></i></a>
+
+</body>
+</html>
